@@ -1,5 +1,5 @@
 $clock-radius: 200px;
-$label-radius: $clock-radius*2.2;
+$label-radius: $clock-radius*1.8;
 $hand-width: 20px;
 
 
@@ -29,11 +29,6 @@ $hand-width: 20px;
     width: 50%;
   }
 
-  .spacing2 {
-    width: fill;
-    height: 100%;
-  }
-
   .marker {
     height: 100%;
     background: black;
@@ -48,6 +43,17 @@ $hand-width: 20px;
     height: $clock-radius*2;
     margin: 0 auto 10px auto;
     width: $clock-radius*2;
+
+    .center-dot{
+      border-radius: 100%;
+      width: 30px;
+      height: 30px;
+      background: black;
+      z-index: 2;
+      position: absolute;
+      top: $clock-radius - 20px;
+      left: $clock-radius - 15px;
+    }
 
     .hand {
       transition-duration: 1s;
@@ -80,6 +86,7 @@ $hand-width: 20px;
         width: $clock-radius*2;
 
         .marker{
+          background: red;
           width: 49%;
         }
       }
@@ -96,9 +103,11 @@ $hand-width: 20px;
     .hour-label{
       position: absolute;
       top:$clock-radius - 11px;
-      left: -19px;
+      left: 17px;
       width: $label-radius;
-      height: $hand-width
+      height: $hand-width;
+      font-size: 1.75em;
+      font-weight: bold;
     }
 
     @for $i from 1 through 12 {

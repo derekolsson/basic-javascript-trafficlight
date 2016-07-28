@@ -66,6 +66,7 @@ function render(state){
     html += '<div class="spacing"></div><div class="marker"></div><div class="spacing2"></div></div>';
     html += '<div id="secondHand" class="hand second-hand section-'+state.second+'">';
     html += '<div class="spacing"></div><div class="marker"></div><div class="spacing2"></div></div>';
+    html += '<div class="center-dot"></div>';
     html += '<div class="hour-label hour-1"><div class="number">1</div></div>';
     html += '<div class="hour-label hour-2"><div class="number">2</div></div>';
     html += '<div class="hour-label hour-3"><div class="number">3</div></div>';

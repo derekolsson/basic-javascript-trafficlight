@@ -18,9 +18,6 @@
   .clock-container .spacing {
     height: 100%;
     width: 50%; }
-  .clock-container .spacing2 {
-    width: fill;
-    height: 100%; }
   .clock-container .marker {
     height: 100%;
     background: black;
@@ -32,6 +29,15 @@
     height: 400px;
     margin: 0 auto 10px auto;
     width: 400px; }
+    .clock-container .analog .center-dot {
+      border-radius: 100%;
+      width: 30px;
+      height: 30px;
+      background: black;
+      z-index: 2;
+      position: absolute;
+      top: 180px;
+      left: 185px; }
     .clock-container .analog .hand {
       transition-duration: 1s;
       position: absolute;
@@ -53,6 +59,7 @@
         height: 6px;
         width: 400px; }
         .clock-container .analog .hand.second-hand .marker {
+          background: red;
           width: 49%; }
       .clock-container .analog .hand.section-0 {
         transform: rotate(-90deg); }
@@ -179,9 +186,11 @@
     .clock-container .analog .hour-label {
       position: absolute;
       top: 189px;
-      left: -19px;
-      width: 440px;
-      height: 20px; }
+      left: 17px;
+      width: 360px;
+      height: 20px;
+      font-size: 1.75em;
+      font-weight: bold; }
     .clock-container .analog .hour-1 {
       transform: rotate(-60deg); }
       .clock-container .analog .hour-1 .number {
