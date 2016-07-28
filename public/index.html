@@ -2,16 +2,21 @@
 <html>
 <head>
   <link rel="stylesheet" href="css/styles.css">
-  <title>Example</title>
+  <title>Digital/Analog Clock</title>
 
 </head>
 <body>
-  <h1>Ejemplo javascript</h1>
+  <h1>Hora Actual</h1>
 
   <div id="viewport"></div>
 
-  <button id="change">Change</button>
-
+    <form>
+      <label for= "clock-type"> Select Display Type: </label>
+      <select id="selector"  name="clock-type">
+        <option value="analog">Analog</option>
+        <option value="digital">Digital</option>
+      </select>
+    </form>
   <script src="scripts/app.js"></script>
 
 </body>

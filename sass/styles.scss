@@ -1,36 +1,118 @@
-$traffic-light-width: 200px;
-$light-size: $traffic-light-width*0.75;
-.traffic-light{
-  background: black;
+$clock-radius: 200px;
+$label-radius: $clock-radius*2.2;
+$hand-width: 20px;
+
+
+.clock-container{
+  background: white;
+  box-sizing: border-box;
   margin-bottom: 10px;
-  padding: $traffic-light-width*0.1;
-  width: $traffic-light-width;
+  padding: 0;
+  width: $clock-radius*2.2;
+  height:$clock-radius*2.2;
 
-  .light{
-    background: white;
-    border-radius: 100%;
-    height: $light-size;
+  .digital{
+    height: $clock-radius;
+    width: $clock-radius*2.2;
+    border: 2px black solid;
+    background: black;
+    color: green;
+    margin: 0;
+    text-align: center;
+    line-height: $clock-radius;
+    font-size: $clock-radius*0.6;
+
+  }
+
+  .spacing {
+    height: 100%;
+    width: 50%;
+  }
+
+  .spacing2 {
+    width: fill;
+    height: 100%;
+  }
+
+  .marker {
+    height: 100%;
+    background: black;
+    border-radius: 0 30% 30% 0;
+  }
+
+
+  .analog{
+    position:relative;
+    border: 2px black solid;
+    border-radius: 50%;
+    height: $clock-radius*2;
     margin: 0 auto 10px auto;
-    width: $light-size;
+    width: $clock-radius*2;
 
-    &.green{
-      background: #0f0;
+    .hand {
+      transition-duration: 1s;
+      position: absolute;
+      display:flex;
+      left: 0;
+      width: $clock-radius*2;
+
+      &.hour-hand{
+        top: $clock-radius - 15px;
+        height: $hand-width;
+
+        .marker {
+          width: 35%;
+        }
+      }
+
+      &.minute-hand{
+        top: $clock-radius - 10px;
+        height: $hand-width*.75;
+
+        .marker{
+          width: 45%;
+        }
+      }
+
+      &.second-hand{
+        top: $clock-radius - 10px;
+        height: $hand-width*.3;
+        width: $clock-radius*2;
+
+        .marker{
+          width: 49%;
+        }
+      }
+
+      @for $i from 0 through 60 {
+
+        &.section-#{$i}{
+          transform:rotate(($i*6-90)+deg);
+        }
+
+      }
+  }
+
+    .hour-label{
+      position: absolute;
+      top:$clock-radius - 11px;
+      left: -19px;
+      width: $label-radius;
+      height: $hand-width
     }
 
-    &.red{
-      background: red;
-    }
+    @for $i from 1 through 12 {
 
-    &.yellow{
-      background: yellow;
-    }
+      .hour-#{$i}{
+        transform:rotate(($i*30-90)+deg);
 
-    &.off{
-      opacity: 0.3;
-    }
+        .number{
+          position: absolute;
+          right: 0;
+          transform: rotate(-($i*30-90)+deg);
+        }
+      }
 
-    &:last-child{
-      margin-bottom: 0;
     }
   }
 }

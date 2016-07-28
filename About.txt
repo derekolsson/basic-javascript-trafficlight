@@ -1,0 +1,11 @@
+setTimeInterval(function, time);
+transform: rotatate(20deg)
+estado: {
+  hours: 4,
+  minutes: 0,
+  seconds: 30,
+  display: 'analog'
+}
+vista: render
+evento: cambiar estado, optionbox (analagous, digital)
+controladores: control digital vs analagous, each hand
