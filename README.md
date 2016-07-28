@@ -1,2 +1,2 @@
-# basic-javascript-trafficlight
-Basic Javascript Traffic Light
+# digital-analog-clock  
+Basic Javascript and Sass Digital/Analog Clock
